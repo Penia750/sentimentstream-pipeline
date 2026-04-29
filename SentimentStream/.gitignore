@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.env
+*.log
+.DS_Store
+
+# Docker
+*.pid
+*.sock
+
+# VSCode
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
