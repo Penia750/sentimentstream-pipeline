@@ -34,8 +34,6 @@ services:
     depends_on:
       mongo:
         condition: service_healthy
-    volumes:
-      - ./api/app.py:/app/app.py   # hot-reload en desarrollo
 
 volumes:
   mongo_data:
