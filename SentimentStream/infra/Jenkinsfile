@@ -5,13 +5,13 @@ pipeline {
 
         stage('Build Docker') {
             steps {
-                sh 'cd SentimentStream && docker compose build'
+                sh 'cd SentimentStream && docker-compose build'
             }
         }
 
         stage('Levantar servicios') {
             steps {
-                sh 'cd SentimentStream && docker compose up -d'
+                sh 'cd SentimentStream && docker-compose up -d'
             }
         }
 
