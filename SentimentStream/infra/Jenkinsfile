@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build Docker') {
+            steps {
+                sh 'docker-compose build'
+            }
+        }
+
+        stage('Levantar servicios') {
+            steps {
+                sh 'docker-compose up -d'
+            }
+        }
+
+        stage('Esperar servicios') {
+            steps {
+                sh 'sleep 10'
+            }
+        }
+
+        stage('Test API') {
+            steps {
+                sh 'curl http://host.docker.internal:5000/sentiments'
+            }
+        }
+    }
+}
